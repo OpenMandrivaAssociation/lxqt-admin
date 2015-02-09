@@ -40,8 +40,9 @@ Admin tools for the LXQt desktop
 
 %files
 %dir %{_datadir}/lxqt/translations/lxqt-admin-time
+%dir %{_datadir}/lxqt/translations/lxqt-admin-user
 %{_bindir}/lxqt-admin-time
 %{_bindir}/lxqt-admin-user
 %{_datadir}/applications/lxqt-admin-time.desktop
 %{_datadir}/applications/lxqt-admin-user.desktop
-%{_datadir}/lxqt/translations/lxqt-admin-time/*.qm
+%{_datadir}/lxqt/translations/lxqt-admin*/*.qm
