@@ -39,8 +39,9 @@ Admin tools for the LXQt desktop
 %install
 %makeinstall_std -C build
 
-for desktop in %{buildroot}%{_sysconfdir}/xdg/autostart/*.desktop; do
-        desktop-file-edit --remove-only-show-in=LXQt --add-only-show-in=X-LXQt ${desktop}
+for name in admin-time admin-user; do
+    desktop-file-edit --remove-category=LXQt --add-category=X-LXQt \
+	--remove-only-show-in=LXQt --add-only-show-in=X-LXQt %{buildroot}%{_datadir}/applications/lxqt-${name}.desktop
 done
 
 %find_lang %{name}-admin-time --with-qt
