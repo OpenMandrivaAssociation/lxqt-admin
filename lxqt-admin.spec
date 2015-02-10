@@ -44,10 +44,10 @@ for name in admin-time admin-user; do
 	--remove-only-show-in=LXQt --add-only-show-in=X-LXQt %{buildroot}%{_datadir}/applications/lxqt-${name}.desktop
 done
 
-%find_lang %{name}-admin-time --with-qt
-%find_lang %{name}-admin-user --with-qt
+%find_lang %{name}-time --with-qt
+%find_lang %{name}-user --with-qt
 
-%files -f %{name}-admin-time.lang -f %{name}-admin-user.lang
+%files -f %{name}-time.lang -f %{name}-user.lang
 %{_bindir}/lxqt-admin-time
 %{_bindir}/lxqt-admin-user
 %{_datadir}/applications/lxqt-admin-time.desktop
