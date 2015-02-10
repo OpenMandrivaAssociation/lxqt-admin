@@ -52,3 +52,5 @@ done
 %{_bindir}/lxqt-admin-user
 %{_datadir}/applications/lxqt-admin-time.desktop
 %{_datadir}/applications/lxqt-admin-user.desktop
+%{_datadir}/lxqt/translations/lxqt-admin-time/lxqt-admin-time_*.qm
+
