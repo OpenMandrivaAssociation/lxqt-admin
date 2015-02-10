@@ -42,9 +42,10 @@ Admin tools for the LXQt desktop
 for desktop in %{buildroot}%{_sysconfdir}/xdg/autostart/*.desktop; do
         desktop-file-edit --remove-only-show-in=LXQt --add-only-show-in=X-LXQt ${desktop}
 don
-%find_lang %{name}-admin-time %{name}-admin-user --with-qt
+%find_lang %{name}-admin-time --with-qt
+%find_lang %{name}-admin-user --with-qt
 
-%files -f %{name}-admin-time.lang  %{name}-admin-user.lang
+%files -f %{name}-admin-time.lang -f %{name}-admin-user.lang
 %{_bindir}/lxqt-admin-time
 %{_bindir}/lxqt-admin-user
 %{_datadir}/applications/lxqt-admin-time.desktop
