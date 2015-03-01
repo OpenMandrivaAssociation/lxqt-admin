@@ -19,11 +19,10 @@ BuildRequires: cmake(Qt5X11Extras)
 BuildRequires: pkgconfig(glib-2.0)
 BuildRequires: pkgconfig(liboobs-1)
 BuildRequires: qt5-devel
-BuildRequires: desktop-file-utils
 Requires: system-tools-backends2
 
 %description
-Admin tools for the LXQt desktop
+Admin tools for the LXQt desktop.
 
 %prep
 %if %git
@@ -39,10 +38,6 @@ Admin tools for the LXQt desktop
 %install
 %makeinstall_std -C build
 
-for name in admin-time admin-user; do
-    desktop-file-edit --remove-category=LXQt --add-category=X-LXQt \
-	--remove-only-show-in=LXQt --add-only-show-in=X-LXQt %{buildroot}%{_datadir}/applications/lxqt-${name}.desktop
-done
 
 %find_lang %{name}-time --with-qt
 %find_lang %{name}-user --with-qt
