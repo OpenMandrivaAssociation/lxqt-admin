@@ -5,7 +5,7 @@ Version: 0.9.0
 Release: 0.%git.1
 Source0: %{name}-%{git}.tar.xz
 %else
-Release: 2
+Release: 3
 Source0: http://lxqt.org/downloads/lxqt/%{version}/%{name}-%{version}.tar.xz
 %endif
 Summary: Admin tools for the LXQt desktop
@@ -13,12 +13,12 @@ URL: http://lxqt.org/
 License: GPL
 Group: Graphical desktop/KDE
 BuildRequires: cmake
+BuildRequires: qmake5
 BuildRequires: cmake(lxqt)
-BuildRequires: cmake(Qt5LinguistTools)
-BuildRequires: cmake(Qt5X11Extras)
+BuildRequires: cmake(Qt5Widgets)
+BuildRequires: cmake(KF5WindowSystem)
 BuildRequires: pkgconfig(glib-2.0)
 BuildRequires: pkgconfig(liboobs-1)
-BuildRequires: qt5-devel
 Requires: system-tools-backends2
 
 %description
@@ -30,7 +30,7 @@ Admin tools for the LXQt desktop.
 %else
 %setup -q
 %endif
-%cmake -DUSE_QT5:BOOL=ON
+%cmake
 
 %build
 %make -C build
