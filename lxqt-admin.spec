@@ -16,6 +16,7 @@ BuildRequires: cmake
 BuildRequires: qmake5
 BuildRequires: cmake(lxqt)
 BuildRequires: cmake(Qt5Widgets)
+BuildRequires: cmake(Qt5LinguistTools)
 BuildRequires: cmake(KF5WindowSystem)
 BuildRequires: pkgconfig(glib-2.0)
 BuildRequires: pkgconfig(liboobs-1)
