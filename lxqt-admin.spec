@@ -1,12 +1,12 @@
 %define git 0
 Name: lxqt-admin
-Version: 0.9.0
+Version: 0.10.0
 %if %git
 Release: 0.%git.1
 Source0: %{name}-%{git}.tar.xz
 %else
-Release: 4
-Source0: http://lxqt.org/downloads/lxqt/%{version}/%{name}-%{version}.tar.xz
+Release: 1
+Source0: https://github.com/lxde/%{name}/archive/%{version}.tar.gz
 %endif
 Summary: Admin tools for the LXQt desktop
 URL: http://lxqt.org/
@@ -49,4 +49,3 @@ Admin tools for the LXQt desktop.
 %{_datadir}/applications/lxqt-admin-time.desktop
 %{_datadir}/applications/lxqt-admin-user.desktop
 %{_datadir}/lxqt/translations/lxqt-admin-time/lxqt-admin-time_*.qm
-
