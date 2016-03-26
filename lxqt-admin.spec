@@ -2,10 +2,10 @@
 Name: lxqt-admin
 Version: 0.10.0
 %if %git
-Release: 1.%git.1
+Release: 0.%git.1
 Source0: %{name}-%{git}.tar.xz
 %else
-Release: 6
+Release: 7
 Source0: https://github.com/lxde/%{name}/archive/%{name}-%{version}.tar.xz
 %endif
 Summary: Admin tools for the LXQt desktop
@@ -14,6 +14,7 @@ License: GPL
 Group: Graphical desktop/KDE
 BuildRequires: cmake
 BuildRequires: qmake5
+BuildRequires: ninja
 BuildRequires: cmake(lxqt)
 BuildRequires: cmake(Qt5Widgets)
 BuildRequires: cmake(Qt5LinguistTools)
@@ -31,14 +32,15 @@ Admin tools for the LXQt desktop.
 %else
 %setup -q
 %endif
-%cmake
+%cmake -G Ninja
 
 %build
-%make -C build
+# To make grep happy about UTF-8 translations in desktop files
+export LC_ALL=en_US.utf-8
+%ninja -C build
 
 %install
-%makeinstall_std -C build
-
+%ninja_install -C build
 
 %find_lang %{name}-time --with-qt
 %find_lang %{name}-user --with-qt
