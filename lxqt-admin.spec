@@ -32,14 +32,23 @@ Admin tools for the LXQt desktop.
 %else
 %setup -q
 %endif
-%cmake -G Ninja
+
+%cmake_qt5 -G Ninja
 
 %build
-# To make grep happy about UTF-8 translations in desktop files
+# Need to be in a UTF-8 locale so grep (used by the desktop file
+# translation generator) doesn't scream about translations containing
+# "binary" (non-ascii) characters
+export LANG=en_US.utf-8
 export LC_ALL=en_US.utf-8
 %ninja -C build
 
 %install
+# Need to be in a UTF-8 locale so grep (used by the desktop file
+# translation generator) doesn't scream about translations containing
+# "binary" (non-ascii) characters
+export LANG=en_US.utf-8
+export LC_ALL=en_US.utf-8
 %ninja_install -C build
 
 %find_lang %{name}-time --with-qt
