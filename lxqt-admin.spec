@@ -1,11 +1,11 @@
 %define git 0
 Name: lxqt-admin
-Version: 0.10.0
+Version: 0.11.0
 %if %git
-Release: 0.%git.1
+Release: 1.%git.1
 Source0: %{name}-%{git}.tar.xz
 %else
-Release: 7
+Release: 1
 Source0: https://github.com/lxde/%{name}/archive/%{name}-%{version}.tar.xz
 %endif
 Summary: Admin tools for the LXQt desktop
