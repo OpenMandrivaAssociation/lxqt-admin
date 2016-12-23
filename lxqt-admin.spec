@@ -57,6 +57,8 @@ export LC_ALL=en_US.utf-8
 %files -f %{name}-time.lang -f %{name}-user.lang
 %{_bindir}/lxqt-admin-time
 %{_bindir}/lxqt-admin-user
+%{_bindir}/lxqt-admin-user-helper
 %{_datadir}/applications/lxqt-admin-time.desktop
 %{_datadir}/applications/lxqt-admin-user.desktop
+%{_datadir}/polkit-1/actions/org.lxqt.lxqt-admin-user.policy
 %{_datadir}/lxqt/translations/lxqt-admin-time/lxqt-admin-time_*.qm
