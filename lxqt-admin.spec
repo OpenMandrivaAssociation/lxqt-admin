@@ -2,7 +2,7 @@
 Name: lxqt-admin
 Version: 0.12.0
 %if %git
-Release: 1.%git.1
+Release: 0.%git.1
 Source0: %{name}-%{git}.tar.xz
 %else
 Release: 1
@@ -21,6 +21,7 @@ BuildRequires: cmake(Qt5LinguistTools)
 BuildRequires: cmake(KF5WindowSystem)
 BuildRequires: pkgconfig(glib-2.0)
 BuildRequires: pkgconfig(liboobs-1)
+BuildRequires: lxqt-build-tools git-core
 Requires: system-tools-backends2
 
 %description
