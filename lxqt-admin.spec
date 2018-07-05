@@ -35,7 +35,9 @@ Admin tools for the LXQt desktop.
 %setup -q
 %endif
 
-%cmake_qt5 -G Ninja
+%cmake_qt5 \
+	-DPULL_TRANSLATIONS:BOOL=OFF \
+	-G Ninja
 
 %build
 # Need to be in a UTF-8 locale so grep (used by the desktop file
@@ -53,14 +55,10 @@ export LANG=en_US.utf-8
 export LC_ALL=en_US.utf-8
 %ninja_install -C build
 
-%find_lang %{name}-time --with-qt
-%find_lang %{name}-user --with-qt
-
-%files -f %{name}-time.lang -f %{name}-user.lang
+%files
 %{_bindir}/lxqt-admin-time
 %{_bindir}/lxqt-admin-user
 %{_bindir}/lxqt-admin-user-helper
 %{_datadir}/applications/lxqt-admin-time.desktop
 %{_datadir}/applications/lxqt-admin-user.desktop
 %{_datadir}/polkit-1/actions/org.lxqt.lxqt-admin-user.policy
-%{_datadir}/lxqt/translations/lxqt-admin-time/lxqt-admin-time_*.qm
