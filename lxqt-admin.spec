@@ -1,12 +1,12 @@
 %define git 0
 Name: lxqt-admin
-Version: 0.14.1
+Version: 0.15.0
 %if %git
-Release: 1.%git.1
+Release: 0.%git.1
 Source0: %{name}-%{git}.tar.xz
 %else
-Release: 2
-Source0: https://downloads.lxqt.org/downloads/%{name}/%{version}/%{name}-%{version}.tar.xz
+Release: 1
+Source0: https://github.com/lxqt/lxqt-admin/releases/download/%{version}/lxqt-admin-%{version}.tar.xz
 %endif
 Summary: Admin tools for the LXQt desktop
 URL: http://lxqt.org/
@@ -63,3 +63,7 @@ export LC_ALL=en_US.utf-8
 %{_datadir}/applications/lxqt-admin-time.desktop
 %{_datadir}/applications/lxqt-admin-user.desktop
 %{_datadir}/polkit-1/actions/org.lxqt.lxqt-admin-user.policy
+%lang(arn) %{_datadir}/lxqt/translations/lxqt-admin-time/lxqt-admin-time_arn.qm
+%lang(ast) %{_datadir}/lxqt/translations/lxqt-admin-time/lxqt-admin-time_ast.qm
+%lang(arn) %{_datadir}/lxqt/translations/lxqt-admin-user/lxqt-admin-user_arn.qm
+%lang(ast) %{_datadir}/lxqt/translations/lxqt-admin-user/lxqt-admin-user_ast.qm
