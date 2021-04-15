@@ -1,6 +1,6 @@
 %define git 0
 Name: lxqt-admin
-Version: 0.16.0
+Version: 0.17.0
 %if %git
 Release: 1.%git.1
 Source0: %{name}-%{git}.tar.xz
