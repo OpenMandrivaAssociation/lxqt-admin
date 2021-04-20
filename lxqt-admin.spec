@@ -63,7 +63,7 @@ export LC_ALL=en_US.utf-8
 %{_bindir}/lxqt-admin-user-helper
 %{_datadir}/applications/lxqt-admin-time.desktop
 %{_datadir}/applications/lxqt-admin-user.desktop
-%{_datadir}/polkit-1/actions/org.lxqt.lxqt-admin-tume.policy
+%{_datadir}/polkit-1/actions/org.lxqt.lxqt-admin-time.policy
 %{_datadir}/polkit-1/actions/org.lxqt.lxqt-admin-user.policy
 %lang(arn) %{_datadir}/lxqt/translations/lxqt-admin-time/lxqt-admin-time_arn.qm
 %lang(ast) %{_datadir}/lxqt/translations/lxqt-admin-time/lxqt-admin-time_ast.qm
