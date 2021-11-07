@@ -1,13 +1,7 @@
-%define git 0
 Name: lxqt-admin
 Version: 1.0.0
-%if %git
-Release: 0.%git.1
-Source0: %{name}-%{git}.tar.xz
-%else
-Release: 1
+Release: %{?snapshot:0.%{snapshot}.}1
 Source0: https://github.com/lxqt/lxqt-admin/releases/download/%{version}/lxqt-admin-%{version}.tar.xz
-%endif
 Summary: Admin tools for the LXQt desktop
 URL: http://lxqt.org/
 License: GPL
@@ -22,6 +16,7 @@ BuildRequires: cmake(KF5WindowSystem)
 BuildRequires: cmake(PolkitQt5-1)
 BuildRequires: pkgconfig(glib-2.0)
 BuildRequires: pkgconfig(liboobs-1)
+BuildRequires: pkgconfig(libsystemd)
 BuildRequires: lxqt-build-tools git-core
 Requires: system-tools-backends2
 
@@ -29,12 +24,7 @@ Requires: system-tools-backends2
 Admin tools for the LXQt desktop.
 
 %prep
-%if %git
-%autosetup -p1 -n %{name}-%{git}
-%else
 %autosetup -p1
-%endif
-
 %cmake_qt5 \
 	-DPULL_TRANSLATIONS:BOOL=OFF \
 	-G Ninja
@@ -58,12 +48,10 @@ export LC_ALL=en_US.utf-8
 
 %files -f %{name}.lang
 %{_bindir}/lxqt-admin-time
-%{_bindir}/lxqt-admin-time-helper
 %{_bindir}/lxqt-admin-user
 %{_bindir}/lxqt-admin-user-helper
 %{_datadir}/applications/lxqt-admin-time.desktop
 %{_datadir}/applications/lxqt-admin-user.desktop
-%{_datadir}/polkit-1/actions/org.lxqt.lxqt-admin-time.policy
 %{_datadir}/polkit-1/actions/org.lxqt.lxqt-admin-user.policy
 %lang(arn) %{_datadir}/lxqt/translations/lxqt-admin-time/lxqt-admin-time_arn.qm
 %lang(ast) %{_datadir}/lxqt/translations/lxqt-admin-time/lxqt-admin-time_ast.qm
