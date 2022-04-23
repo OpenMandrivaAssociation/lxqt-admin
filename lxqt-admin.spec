@@ -1,6 +1,6 @@
 Name: lxqt-admin
-Version: 1.0.0
-Release: %{?snapshot:0.%{snapshot}.}1
+Version: 1.1.0
+Release: %{?snapshot:1.%{snapshot}.}1
 Source0: https://github.com/lxqt/lxqt-admin/releases/download/%{version}/lxqt-admin-%{version}.tar.xz
 Summary: Admin tools for the LXQt desktop
 URL: http://lxqt.org/
@@ -53,7 +53,3 @@ export LC_ALL=en_US.utf-8
 %{_datadir}/applications/lxqt-admin-time.desktop
 %{_datadir}/applications/lxqt-admin-user.desktop
 %{_datadir}/polkit-1/actions/org.lxqt.lxqt-admin-user.policy
-%lang(arn) %{_datadir}/lxqt/translations/lxqt-admin-time/lxqt-admin-time_arn.qm
-%lang(ast) %{_datadir}/lxqt/translations/lxqt-admin-time/lxqt-admin-time_ast.qm
-%lang(arn) %{_datadir}/lxqt/translations/lxqt-admin-user/lxqt-admin-user_arn.qm
-%lang(ast) %{_datadir}/lxqt/translations/lxqt-admin-user/lxqt-admin-user_ast.qm
