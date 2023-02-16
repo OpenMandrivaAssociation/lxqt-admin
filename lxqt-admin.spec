@@ -1,6 +1,6 @@
 Name: lxqt-admin
 Version: 1.2.0
-Release: %{?snapshot:1.%{snapshot}.}2
+Release: %{?snapshot:1.%{snapshot}.}3
 Source0: https://github.com/lxqt/lxqt-admin/releases/download/%{version}/lxqt-admin-%{version}.tar.xz
 Summary: Admin tools for the LXQt desktop
 URL: http://lxqt.org/
