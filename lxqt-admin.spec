@@ -1,5 +1,5 @@
 Name: lxqt-admin
-Version: 1.4.0
+Version: 2.0.0
 Release: %{?snapshot:1.%{snapshot}.}1
 Source0: https://github.com/lxqt/lxqt-admin/releases/download/%{version}/lxqt-admin-%{version}.tar.xz
 Summary: Admin tools for the LXQt desktop
@@ -7,13 +7,12 @@ URL: http://lxqt.org/
 License: GPL
 Group: Graphical desktop/KDE
 BuildRequires: cmake
-BuildRequires: qmake5
 BuildRequires: ninja
 BuildRequires: cmake(lxqt)
-BuildRequires: cmake(Qt5Widgets)
-BuildRequires: cmake(Qt5LinguistTools)
-BuildRequires: cmake(KF5WindowSystem)
-BuildRequires: cmake(PolkitQt5-1)
+BuildRequires: cmake(Qt6Widgets)
+BuildRequires: cmake(Qt6LinguistTools)
+BuildRequires: cmake(KF6WindowSystem)
+BuildRequires: cmake(PolkitQt6-1)
 BuildRequires: pkgconfig(glib-2.0)
 BuildRequires: pkgconfig(liboobs-1)
 BuildRequires: pkgconfig(libsystemd)
@@ -25,7 +24,7 @@ Admin tools for the LXQt desktop.
 
 %prep
 %autosetup -p1
-%cmake_qt5 \
+%cmake \
 	-DPULL_TRANSLATIONS:BOOL=OFF \
 	-G Ninja
 
